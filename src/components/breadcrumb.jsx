@@ -1,3 +1,5 @@
+import baseURL from "@/utils/base-url";
+
 const Breadcrumb = ({ children }) => {
     return (
         <nav>
@@ -13,7 +15,10 @@ const BreadcrumbItem = ({ active, children, url }) => {
         <li className="active breadcrumb-item">{children}</li>
     ) : (
         <li className="breadcrumb-item">
-            <a className="link-underline link-underline-opacity-0" href={url}>
+            <a
+                className="link-underline link-underline-opacity-0"
+                href={baseURL(url)}
+            >
                 {children}
             </a>
         </li>

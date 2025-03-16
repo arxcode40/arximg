@@ -1,5 +1,6 @@
 import { useContext } from "preact/compat";
 import AppState from "@/context/app-state-context";
+import baseURL from "@/utils/base-url";
 import menuList from "@/data/menu-list";
 import DropdownItem from "./partials/dropdown-item";
 import Dropdown from "bootstrap/js/src/dropdown";
@@ -17,7 +18,7 @@ export default function Navbar() {
             <div className="container">
                 <a
                     className="align-items-center d-flex navbar-brand"
-                    href="/"
+                    href={baseURL("/")}
                     title="ArX IMG"
                 >
                     <img
@@ -25,7 +26,7 @@ export default function Navbar() {
                         fetchPriority="high"
                         height={24}
                         loading="lazy"
-                        src="/favicon.svg"
+                        src={baseURL("/favicon.svg")}
                         width={24}
                     />
                     <span className="fw-medium ms-2">ArX IMG</span>
@@ -44,7 +45,7 @@ export default function Navbar() {
                         <li className="nav-item">
                             <a
                                 className={`${isHomeActive}nav-link`}
-                                href="/"
+                                href={baseURL("/")}
                                 title="Home"
                             >
                                 <i className="bi bi-house"></i> Home
@@ -73,7 +74,7 @@ export default function Navbar() {
                                             icon={icon}
                                             key={index}
                                             title={title}
-                                            url={url}
+                                            url={baseURL(url)}
                                         />
                                     );
                                 })}

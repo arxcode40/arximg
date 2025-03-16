@@ -2,6 +2,7 @@ import { useCallback, useState } from "preact/compat";
 import { lazy, LocationProvider, ErrorBoundary, Router } from "preact-iso";
 import AppState from "./context/app-state-context";
 import AppLayout from "./layouts/app-layout";
+import baseURL from "./utils/base-url.js";
 
 export function App() {
     const Home = lazy(() => import("./pages/home.jsx"));
@@ -22,10 +23,10 @@ export function App() {
                 <LocationProvider>
                     <ErrorBoundary>
                         <Router onRouteChange={(url) => onRouteChange(url)}>
-                            <Home path="/" />
-                            <Compress path="/compress" />
-                            <Resize path="/resize" />
-                            <Convert path="/convert" />
+                            <Home path={baseURL("/")} />
+                            <Compress path={baseURL("/compress")} />
+                            <Resize path={baseURL("/resize")} />
+                            <Convert path={baseURL("/convert")} />
                             <NotFound default />
                         </Router>
                     </ErrorBoundary>
