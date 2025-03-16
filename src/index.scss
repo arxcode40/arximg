@@ -1,0 +1,12 @@
+@import "bootstrap/scss/bootstrap";
+$bootstrap-icons-font-dir: "bootstrap-icons/font/fonts" !default;
+@import "bootstrap-icons/font/bootstrap-icons";
+@import "aos/src/sass/aos";
+
+.min-dvh-100 {
+    min-height: 100dvh;
+}
+
+.w-fit {
+    width: fit-content;
+}
