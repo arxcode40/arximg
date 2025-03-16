@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
 
 export default defineConfig({
-    // base: "/arximg/",
+    base: "/arximg/",
     plugins: [preact()],
     resolve: {
         alias: {
